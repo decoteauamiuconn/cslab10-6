@@ -19,8 +19,8 @@ with open(‘’, ‘r’) as file:
 			
 			"""should rewrite input script so it contains a python script that 
 			TODO 
-			- adds to Q1Bout the entire command line used to invoke it
-			- ^ runs the script"""
+			- adds to Q1Bout the entire command line, plus arguments, used to invoke it
+			- ^ runs itself before it does this"""
 
 			#file.write(‘import Q1A’)
 			#file.write(‘\n’)

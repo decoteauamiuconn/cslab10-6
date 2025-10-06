@@ -14,3 +14,11 @@ with open('Q1Aout', 'w') as dest:
 				# add to new file
 				dest.write(file)
 				dest.write('\n') #open newline for next file
+
+with open('Q1Aout', 'r') as source:
+	print(source.read())
+
+
+
+"""with open('Q1Cout', 'w') as dest:
+	dest.write(' '.join(os.sys.argv))"""
