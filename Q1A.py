@@ -21,4 +21,5 @@ with open('Q1Aout', 'r') as source:
 
 
 """with open('Q1Cout', 'w') as dest:
-	dest.write(' '.join(os.sys.argv))"""
+	dest.write(' '.join(os.sys.argv))
+	reuse later"""
