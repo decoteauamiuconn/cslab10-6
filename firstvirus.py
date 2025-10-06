@@ -8,7 +8,7 @@ SSH_PORT = 22 # SSH port
 TELNET_PORT = 23 # Telnet port
 IpAddr = "10.13.4." 
 lastdigit = range(0, 25) #exclusive; up to 24
-TIMEOUT = 2 # seconds; recommended by copilot; 
+TIMEOUT = 2  
 
 def check_port(ip, port):
     try:
