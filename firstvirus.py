@@ -75,8 +75,10 @@ def try_telnet(ip, user, password):
         return False
 
 """TODO Write a function, find vulnerable accounts, that searches over of the IPs within the log files from Part 1 
-and finds the user/password combinations from the leaked password database Q2pwd that can be used to 
+and finds the user/password combinations from the leaked password database q2.csv that can be used to 
 successfully log in to the vulnerable machines via either SSH or telnet."""
+
+
 
 def try_ssh(ip, user, password):
     client = paramiko.SSHClient()
