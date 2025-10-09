@@ -7,7 +7,6 @@
 
 import os
 searchstring = ‘if __name__ == “__main__”’ #is it a python file?
-#viruscode = ‘Q1A.py’
 
 
 filetosearch = input(“Searching for file called: “) #prompt in command line
@@ -20,7 +19,8 @@ with open(‘’, ‘r’) as file:
 			"""should rewrite input script so it contains a python script that 
 			TODO 
 			- adds to Q1Bout the entire command line, plus arguments, used to invoke it
-			- ^ runs itself before it does this"""
+			- ^ runs itself before it does this
+			- double check: was i supposed to add virus?"""
 
 			#file.write(‘import Q1A’)
 			#file.write(‘\n’)

