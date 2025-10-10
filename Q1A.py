@@ -1,8 +1,7 @@
 #Q1A.py
 
-# os needed
 import os
-#Import shutil ; no shutil not needed after all
+
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
